@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA
 from .abstract_model import AbstractModel
 
 MAX_NUM_CLUSTERS = 10
-NUM_OBSERVATIONS = 100
+NUM_OBSERVATIONS = 400
 
 
 class FiniteGMMModel(AbstractModel):

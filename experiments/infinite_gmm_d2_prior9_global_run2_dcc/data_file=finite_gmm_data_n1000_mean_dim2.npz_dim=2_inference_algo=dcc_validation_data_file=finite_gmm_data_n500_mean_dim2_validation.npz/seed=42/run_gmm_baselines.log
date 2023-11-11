@@ -1,0 +1,13 @@
+[2023-11-10 12:05:21,514][root][INFO] - /home/bianca/Desktop/msc/q1y2/seminar/proposal/sdvi_neurips/experiments/infinite_gmm_d2_prior9_global_run2_dcc/data_file=finite_gmm_data_n1000_mean_dim2.npz_dim=2_inference_algo=dcc_validation_data_file=finite_gmm_data_n500_mean_dim2_validation.npz/seed=42
+[2023-11-10 12:05:21,537][root][INFO] - Ground truth
+[2023-11-10 12:05:21,537][root][INFO] - ====================
+
+[2023-11-10 12:05:21,537][root][INFO] - Number of clusters: 5
+[2023-11-10 12:05:21,537][root][INFO] - Mean 0: [ 1.4455951  -0.27526313]
+[2023-11-10 12:05:21,537][root][INFO] - Mean 1: [-2.0439036  0.5332405]
+[2023-11-10 12:05:21,537][root][INFO] - Mean 2: [-1.0173812 -1.3120104]
+[2023-11-10 12:05:21,537][root][INFO] - Mean 3: [0.37837622 0.7861454 ]
+[2023-11-10 12:05:21,538][root][INFO] - Mean 4: [-0.6747294  -0.37837312]
+[2023-11-10 12:18:02,085][root][INFO] - Starting lppd evaluation
+[2023-11-10 12:18:22,976][root][INFO] - Finished lppd evaluation
+[2023-11-10 12:18:22,988][root][INFO] - {'num_clusters,mean_0,mean_1,mean_2,mean_3': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10,mean_11,mean_12': 1.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10,mean_11': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10,mean_11,mean_12,mean_13': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10': 0.0}

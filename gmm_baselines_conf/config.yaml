@@ -17,4 +17,7 @@ defaults:
   # - override hydra/launcher: submitit_slurm
 
 name: test_gmm_baselines
-seed: 0
+seed: 42
+data_file: finite_gmm_data_n=1000_mean_dim=2.npz
+validation_data_file: finite_gmm_data_n=500_mean_dim=2_validation.npz
+dim: 2

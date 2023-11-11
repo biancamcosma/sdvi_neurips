@@ -20,10 +20,9 @@ from pyro.infer.autoguide.utils import deep_getattr, deep_setattr
 from pyro.nn.module import PyroParam
 from torch.distributions import constraints
 
-from models.real_gmm import InfiniteGMMModel
+from models.gmm import InfiniteGMMModel
 from models.pyro_extensions.dcc import DCC, SLPInfo, IterationInfo
 from models.pyro_extensions.resource_allocation import DCCUtility
-
 
 class BBVIAutoGuide(pyro.infer.autoguide.AutoMessenger):
     def __init__(
@@ -324,12 +323,12 @@ def main(cfg):
 
     model = InfiniteGMMModel(
         data_path=hydra.utils.to_absolute_path(
-            "data/gmm_higher_dims/gmm_data.npz"
+            "data/gmm/" + cfg.data_file
         ),
         validation_data_path=hydra.utils.to_absolute_path(
-            "data/gmm_higher_dims/gmm_data_validation.npz"
+            "data/gmm/" + cfg.validation_data_file
         ),
-        cluster_means_dim=100,
+        cluster_means_dim=cfg.dim,
         num_observations=1000,
     )
 
@@ -402,7 +401,11 @@ def main(cfg):
             utility=DCCUtility(),
             mcmc_sample_hide_fn=dcc_hide_fn,
         )
+        
         slps_info, iteration_info = dcc.run()
+
+        #print("SLPs info:", slps_info)
+        
         logging.info("Starting lppd evaluation")
         lppds = lppd_evaluation(
             model,
@@ -415,6 +418,8 @@ def main(cfg):
         slp_weights = extract_slp_weights_dcc(
             slps_info, iteration_info.log_marginal_likelihoods_per_iteration
         )
+
+        print("SLPs weights:", slp_weights)
         cluster_probs = {at: ws[-1] for at, ws in slp_weights.items()}
 
     logging.info(cluster_probs)

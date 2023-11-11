@@ -1,0 +1,5 @@
+- inference_algo=dcc
+- name=infinite_gmm_d4_prior9_local_run3_dcc
+- data_file=finite_gmm_data_n1000_mean_dim4.npz
+- validation_data_file=finite_gmm_data_n500_mean_dim4_validation.npz
+- dim=4

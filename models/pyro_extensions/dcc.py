@@ -389,13 +389,14 @@ class LocalMCMC:
         branching_sample_values: OrderedDict[str, torch.Tensor],
         num_steps: int,
         initial_trace: poutine.Trace,
+        global_rmh = True,
     ) -> tuple[list[poutine.Trace], torch.Tensor]:
         trace = copy.deepcopy(initial_trace)
         # print(trace.nodes.keys())
 
         max_log_weight = torch.tensor(float("-inf"))
         samples = []
-        for _ in range(num_steps):
+        for i in range(num_steps):
             # Sample address for which to do new sample
             # sample_addresses = get_sample_addresses(trace)
             update_ix = dist.Categorical(
@@ -405,14 +406,16 @@ class LocalMCMC:
 
             # Resample from prior at given address
             new_trace = copy.deepcopy(trace)
-            # new_trace.nodes[update_address]["value"] = new_trace.nodes[update_address][
-            #     "fn"
-            # ].sample()
-            new_value, log_proposal_ratio = self.local_proposal(
-                new_trace.nodes[update_address]["fn"],
-                trace.nodes[update_address]["value"],
-            )
-            new_trace.nodes[update_address]["value"] = new_value
+
+            if global_rmh:
+                for address in sample_addresses:
+                    new_value, log_proposal_ratio = self.local_proposal(
+                        new_trace.nodes[address]["fn"],
+                        trace.nodes[address]["value"],)
+            else:
+                new_value, log_proposal_ratio = self.local_proposal(
+                    new_trace.nodes[update_address]["fn"],
+                    trace.nodes[update_address]["value"],)
 
             # Check if new trace is valid
             try:
@@ -420,9 +423,14 @@ class LocalMCMC:
                     replayed_trace = poutine.trace(
                         poutine.replay(model, trace=new_trace)
                     ).get_trace()
+
                 new_addresses = get_sample_addresses(replayed_trace)
                 # New trace is valid if and only if it falls within the same SLP
-                new_trace_is_valid = ",".join(new_addresses) == address_trace
+
+                # Just adding "num_clusters" in not a good solution... but it works for now...
+                # The (possible) bug is that the new trace/slp is never accepted because it will always have num_clusters at the beggining, while the sample addresses that are passed to this method do not include branching variables
+                # It seems that we can never choose "num_clusters" as the local update, so should we check if the trace is valid?
+                new_trace_is_valid = ",".join(new_addresses) == "num_clusters," + address_trace
             except:
                 new_trace_is_valid = False
 

@@ -1,0 +1,5 @@
+- inference_algo=dcc
+- name=infinite_gmm_d32_prior5_global_run1_dcc
+- data_file=finite_gmm_data_n1000_mean_dim32.npz
+- validation_data_file=finite_gmm_data_n500_mean_dim32_validation.npz
+- dim=32

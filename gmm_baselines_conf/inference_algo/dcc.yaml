@@ -1,5 +1,5 @@
 _target_: models.pyro_extensions.dcc.DCC
-num_iterations: 10
+num_iterations: 50
 num_chains: 10
 num_init_mcmc: 10
 num_mcmc_steps_per_iteration: 10

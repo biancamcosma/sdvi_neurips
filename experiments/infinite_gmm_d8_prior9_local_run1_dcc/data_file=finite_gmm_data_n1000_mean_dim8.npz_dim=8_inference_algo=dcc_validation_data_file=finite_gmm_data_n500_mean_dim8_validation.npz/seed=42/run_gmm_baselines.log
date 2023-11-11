@@ -1,0 +1,18 @@
+[2023-11-10 09:00:59,967][root][INFO] - /home/bianca/Desktop/msc/q1y2/seminar/proposal/sdvi_neurips/experiments/infinite_gmm_d8_prior9_local_run1_dcc/data_file=finite_gmm_data_n1000_mean_dim8.npz_dim=8_inference_algo=dcc_validation_data_file=finite_gmm_data_n500_mean_dim8_validation.npz/seed=42
+[2023-11-10 09:00:59,993][root][INFO] - Ground truth
+[2023-11-10 09:00:59,994][root][INFO] - ====================
+
+[2023-11-10 09:00:59,994][root][INFO] - Number of clusters: 5
+[2023-11-10 09:00:59,994][root][INFO] - Mean 0: [ 1.640006   -0.31228188 -2.3187778   0.6049533  -1.1542035  -1.488456
+  0.4292621   0.8918701 ]
+[2023-11-10 09:00:59,995][root][INFO] - Mean 1: [-0.7654703  -0.42925858 -0.63496953  0.19373244 -0.91171646  1.1713187
+ -1.1400118   0.13058487]
+[2023-11-10 09:00:59,995][root][INFO] - Mean 2: [-0.6027037   0.39708745 -0.94930655 -1.6060688   0.39419156  1.5500836
+  1.0001932   0.8246333 ]
+[2023-11-10 09:00:59,995][root][INFO] - Mean 3: [ 0.20419715  1.3449943  -1.3733463  -0.84193146 -0.02222099 -0.76464283
+  0.55195946 -1.3968523 ]
+[2023-11-10 09:00:59,996][root][INFO] - Mean 4: [ 0.20433086  0.5776447  -2.3613372   0.27562445 -1.0958612  -0.5329324
+  0.2909318  -0.97708845]
+[2023-11-10 09:14:05,270][root][INFO] - Starting lppd evaluation
+[2023-11-10 09:14:29,858][root][INFO] - Finished lppd evaluation
+[2023-11-10 09:14:29,871][root][INFO] - {'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10,mean_11': 1.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5': 0.0, 'num_clusters,mean_0,mean_1,mean_2': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10,mean_11,mean_12,mean_13': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10,mean_11,mean_12': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3,mean_4,mean_5,mean_6,mean_7,mean_8,mean_9,mean_10': 0.0, 'num_clusters,mean_0,mean_1,mean_2,mean_3': 0.0}
